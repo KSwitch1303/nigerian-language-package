@@ -26,12 +26,12 @@ function createFunction(functionName, params, body) {
 
 //if Statement
 function ifStatement(condition, trueBody, falseBody = '') {
-  const func = new Function('aha', 'kwou', 'oruko', 'soro', `
+  const func = new Function('aha', 'kwou', 'oruko', 'soro', 'suna', 'magana', `
     if (${condition}) { 
       ${trueBody}
     } else {
       ${falseBody} }`);
-  func(variables, talk, variables, talk);
+  func(variables, talk, variables, talk, variables, talk);
 }
 
 //Random
@@ -43,12 +43,18 @@ function randomGen(range) {
 
 //While Loop
 function whileLoop(condition, body) {
-  const func = new Function('aha', 'kwou', `
+  const func = new Function('aha', 'kwou', 'oruko', 'soro', 'suna', 'magana', `
     while (${condition}) { 
       ${body} 
     }
   `);
-  func(variables, talk);
+  func(variables, talk, variables, talk, variables, talk);
+}
+
+//typeOF
+
+function typeOfValue(value) {
+  return typeof value
 }
 
 //Igbo
@@ -62,7 +68,8 @@ const igbo = {
   oru: createFunction, // create function
   o_buru: ifStatement, // if statement
   gbasasia: randomGen, // random
-  mgbe: whileLoop // while loop
+  mgbe: whileLoop, // while loop
+  udi: typeOfValue // typeOf 
 }
 
 
@@ -74,11 +81,12 @@ const yoruba = {
   ise_: functions, // global functions
   soro: talk, // console.log
   fun: forLoop, // for loop
-  bari: createVariable, // create variable
+  je_ki: createVariable, // create variable
   ise: createFunction, // create function
   ipo: ifStatement, // if statement
   laileto: randomGen, // random
-  nigba_ti: whileLoop // while loop
+  nigba_ti: whileLoop, // while loop
+  iru: typeOfValue // typeOf
 }
 
 // Hausa
@@ -87,11 +95,12 @@ const hausa = {
   aiki_: functions, // global functions
   magana: talk, // console.log
   domin: forLoop, // for loop
-  je_ki: createVariable, // create variable
+  bari: createVariable, // create variable
   aiki: createFunction, // create function
   yanayi: ifStatement, // if statement
   bazuwar: randomGen, // random
-  yayin_da: whileLoop // while loop
+  yayin_da: whileLoop, // while loop
+  nau_in: typeOfValue // typeOf
 }
 
 
