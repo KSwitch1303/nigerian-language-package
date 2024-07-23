@@ -1,12 +1,9 @@
-function ikwo(string) {
+export default function ikwo(string) {
   return console.log(string);
 }
 
-function maka(initial, constrain, i, body) {
+export default function maka(initial, constrain, body) {
   for(i = initial; i < constrain; i++) {
     console.log(body);
   }
 }
-
-module.exports = ikwo;
-module.exports = maka;
